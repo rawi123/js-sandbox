@@ -1,2 +1,16 @@
-let num1=0;
-console.log(num1);
+let str="rawi";
+let int=100;
+let obj={model:"fiat",horsepower:300};
+obj.model='rawi';
+let flag=true;
+let y=null;
+let undefined;
+let id1=Symbol("id");
+console.log(str," this is str");
+console.log(int ,"this is int");
+console.log(obj ,"this is obj");
+console.log(flag,"this is boolean");
+console.log(y," this is null");
+console.log(undefined," this is undefined");
+console.log(id1," this is symbol");
+console.log(typeof("80"+71));
