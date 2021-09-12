@@ -14,3 +14,4 @@ console.log(y," this is null");
 console.log(undefined," this is undefined");
 console.log(id1," this is symbol");
 console.log(typeof("80"+71));
+console.log(NaN);

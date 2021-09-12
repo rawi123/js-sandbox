@@ -54,7 +54,7 @@ str="he's got it!";
 2. create a variable and assign a value on how much tax they should pay.
 3. create a variable that will calculate the bill * tax and its output would be: Your total bill is <total bill> $.
  */
-let bill=10;
+let bill=101;
 let tax=1.5;
 let total_bill=bill*tax;
 console.log(total_bill,"$");
