@@ -29,3 +29,4 @@ function print1(arr){
 // print1(people);
 let withBob=[people,"Bob"];
 console.log(withBob);
+// let withBob=people.join()+",WithBob";
