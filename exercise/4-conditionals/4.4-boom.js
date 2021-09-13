@@ -1,6 +1,6 @@
 let n=77;
 function boom(number){
-    for (let i=0;i<=number;i++){
+    for (let i=1;i<=number;i++){
         if(i%7===0)
         {
             let mini=i.toString();
