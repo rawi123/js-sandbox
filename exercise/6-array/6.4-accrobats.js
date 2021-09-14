@@ -1,4 +1,4 @@
-let arr=[5,-1,1,7,-1,5];
+let arr=[5,-1,1,10,-1,5];
 let bestAvgJump=arr=>{
     let temp=[]
     let sum=0;
@@ -14,7 +14,7 @@ let bestAvgJump=arr=>{
         }
     }
     return temp;
-}
+} 
 // this also works for the best jump just send the right arr
 let bestAvg=arr=>{
     let max=0;
