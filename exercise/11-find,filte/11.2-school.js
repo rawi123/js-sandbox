@@ -38,6 +38,7 @@ const school = {
     },
     ],
 };
+// all the functions can be made shorter but wont be as much understandable
 function findPerson(type,id){
     return school[type].find(val=>val.id===id)
 }
