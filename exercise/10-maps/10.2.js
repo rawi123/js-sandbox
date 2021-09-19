@@ -4,7 +4,7 @@ let a=[1,2,3,4]
 // console.log(doubleValues(a));
 // console.log(onlyEven(a));
 a=["a","b","c","d","A","o","Y"]
-// const showFirstAndLast=arr=>arr.filter((val,idx)=>idx===0||idx===arr.length-1)
+const showFirstAndLast=arr=>arr.filter((val,idx)=>idx===0&&typeof(val)==="string"||idx===arr.length-1&&typeof(val)==="string")
 // console.log(showFirstAndLast(a));
 // let obj={};
 // a.forEach(val=>{
