@@ -2,7 +2,7 @@ const food = ["Noodle", "Pasta", "Ice-cream", "Meat",
 "Cucumber", "Olives"];
 const food1 = ["Fries", "Ice-cream", "Pizza", "Olives",
 "Hamburgers"];
-const compare3=(arr1,arr2)=>{
+const compare3=(arr1,arr2)=>{//wont remove duplicates!
     arr=arr1.filter((val,i)=>{
         let temp=arr2.filter(val1=>val===val1)
         return temp.length
