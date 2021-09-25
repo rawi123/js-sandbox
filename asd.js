@@ -1,1 +1,2 @@
-console.log(0.3.toFixed(2));
+if(9)
+    console.log(123);
