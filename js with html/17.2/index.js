@@ -2,7 +2,7 @@ const submit = document.querySelector("input[type='submit']")
 const div = document.querySelector("div")
 console.log(div);
 const relevantText = document.createElement('h4')
-relevantText.innerText = "100 letters minimun"
+relevantText.innerText = "*100 letters minimun"
 relevantText.style.color = "red"
 console.log(div.children);
 // div.appendChild(relevantText)
