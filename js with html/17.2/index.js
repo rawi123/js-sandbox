@@ -13,10 +13,12 @@ submit.onclick = () => {
             div.appendChild(relevantText)
         }
     }
-}
-text.addEventListener("click", () => {
-    if (div.children.length > 1) {
-
-        div.removeChild(relevantText)
+    else {
+        if(div.children.length>1)
+            div.removeChild(relevantText)
     }
-});
+}
+// text.addEventListener("click", () => {
+//     if (div.children.length > 1) 
+//         div.removeChild(relevantText)
+// });
