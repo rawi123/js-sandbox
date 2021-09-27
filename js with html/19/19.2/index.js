@@ -47,9 +47,10 @@ function createInput() {
         field.firstChild.appendChild(create)
     }
 }
+
 function pasteIt(e){
-    e.preventDefault();
-    let text = (e.originalEvent || e).clipboardData.getData('text/plain');
+    // e.preventDefault();
+    let text = e.clipboardData.getData('text');
     text=text.split("")
     applyPaste(this,text)
 }
