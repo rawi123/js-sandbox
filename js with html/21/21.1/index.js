@@ -4,7 +4,7 @@ const div=document.querySelector("div")
 submit.addEventListener('click',()=>{
     if(div.children[div.children.length-1].tagName==="P")
         div.lastChild.remove()
-    if(parseInt(text.value)>18)
+    if(parseFloat(text.value)>18)
         create("good")
     else if(parseInt(text.value)==text.value)
         create("no")

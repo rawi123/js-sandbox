@@ -10,6 +10,9 @@ const startTimer = () => {
             displayTime([[milSec, milSecTimer], [sec, secTimer], [min, minTimer]])
         }, 10);
         flag = true
+        start.style.backgroundColor="white"
+        // start.style.border="1px solid gray"
+        // start.style.borderRadius="2px"
     }
 }
 const displayTime = arr => {
@@ -20,9 +23,11 @@ const displayTime = arr => {
 }
 const stopTimer = () => {
     clearInterval(a)
+    start.style.backgroundColor="#E5E5E5"
     flag = false;
 }
 const resetTimer = () => {
+    start.style.backgroundColor="#E5E5E5"
     clearInterval(a)
     totalMilSec = 0;milSecTimer = 0;secTimer = 0;minTimer = 0
     displayTime([[milSec, milSecTimer], [sec, secTimer], [min, minTimer]])
