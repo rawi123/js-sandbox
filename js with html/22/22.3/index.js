@@ -28,10 +28,23 @@ const checkLetter = e => {
 
     }
 }
+const playAgain=()=>{
+    arr.length=0
+    changing.innerText="Guess the letter"
+    changing.style.color="black"
+    flag=false;
+    btn.remove()
+    toGuess=genLetter()
+    logArr()
+}
 const checkWin = key => {
     if (key === toGuess) {
         changing.innerText = "succes"
         changing.style.color = "green"
+        btn.innerText="play again"
+        console.dir(btn);
+        btn.addEventListener("click",playAgain)
+        document.body.appendChild(btn)
         flag = "true"
     }
     else {
@@ -42,12 +55,12 @@ const checkWin = key => {
 const logArr = () => {
     keysGuessed.innerText = arr.join(",")
 }
+const btn=document.createElement("button")
 let flag = false
 window.addEventListener("keydown", checkLetter)
 flex(document.body)
 const div = document.querySelector("div")
 const keysGuessed = document.querySelector("#keysGuessed")
-console.log(keysGuessed);
 const changing = document.querySelector("#changing")
 div.style.border = "2px solid black"
 div.style.width = "3rem"
@@ -57,6 +70,5 @@ const p = document.createElement("p")
 p.innerText = "?"
 p.style.fontSize = "1.5rem"
 div.appendChild(p)
-const toGuess = genLetter();
+let toGuess = genLetter();
 const arr = []
-console.log(toGuess, changing);
