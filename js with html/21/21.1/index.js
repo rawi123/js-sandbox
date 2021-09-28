@@ -1,10 +1,8 @@
 const submit=document.querySelector('input[type=submit]')
 const text=document.querySelector('input[type=text]')
-console.log(submit);
 const div=document.querySelector("div")
 submit.addEventListener('click',()=>{
-    
-    if(div.children[div.children.length-1].tagName==="P");
+    if(div.children[div.children.length-1].tagName==="P")
         div.lastChild.remove()
     if(parseInt(text.value)>18)
         create("good")
