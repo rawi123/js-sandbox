@@ -16,8 +16,11 @@ function create(str){
     const create=document.createElement("p")
     if(str==="good"){
         create.innerText="you can drink"
+        create.style.color="green"
     }
-    else
+    else{
         create.innerText="you cant drink"
+        create.style.color="red"
+    }
     div.appendChild(create)
 }

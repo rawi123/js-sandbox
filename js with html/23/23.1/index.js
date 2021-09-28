@@ -1,11 +1,8 @@
-const hours = document.querySelector('.hours')
-const minutes = document.querySelector('.minutes')
-const seconds = document.querySelector('.seconds')
-setInterval(() => {
-    let today = new Date();
-    let calchours = today.getHours();
-    let calcminutes = today.getMinutes();
-    let calcseconds = today.getSeconds();
+function func(){
+    today = new Date();
+     calchours = today.getHours();
+     calcminutes = today.getMinutes();
+     calcseconds = today.getSeconds();
 
     if (calchours < 10)
         hours.innerText = `0${calchours}`;
@@ -19,4 +16,17 @@ setInterval(() => {
         seconds.innerText = `0${calcseconds}`;
     else
         seconds.innerText = `${calcseconds}`;
+}
+
+
+const hours = document.querySelector('.hours');
+const minutes = document.querySelector('.minutes');
+const seconds = document.querySelector('.seconds');
+let today = new Date();
+let calchours = today.getHours();
+let calcminutes = today.getMinutes();
+let calcseconds = today.getSeconds();
+func();
+setInterval(() => {
+     func()
 }, 500);
