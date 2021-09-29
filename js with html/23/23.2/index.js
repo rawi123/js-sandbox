@@ -11,8 +11,7 @@ const startTimer = () => {
         }, 10);
         flag = true
         start.style.backgroundColor="white"
-        // start.style.border="1px solid gray"
-        // start.style.borderRadius="2px"
+
     }
 }
 const displayTime = arr => {

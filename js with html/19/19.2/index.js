@@ -69,15 +69,15 @@ function applyPaste(element,text,i=0){
 }
 function writing(ele) {
     if (this.nextElementSibling) {
-        if (this.value.length >= 1)
-            this.nextElementSibling.focus()
+        if (this.value.length >= 1){
+           
+            this.nextElementSibling.focus()}
     }
     else if (ele.key !== "Backspace") {
         check6TypeRight()
     }
 }
 function goBack(ele) {
-    console.log(this);
     if (this.value.length === 0 && ele.key === "Backspace") {
         if (this.previousElementSibling)
             this.previousElementSibling.focus()
