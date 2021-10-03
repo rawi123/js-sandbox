@@ -4,6 +4,8 @@ for (let i = 1; i <= 10; i++) {
     for (let j = 1; j <= 20; j++) {
         let tableRow = document.createElement("td")
         if (i === 1 && j === 1) {
+        
+            tableRow = document.createElement("th")
             tableRow.innerHTML = "&times"
         }
         else {

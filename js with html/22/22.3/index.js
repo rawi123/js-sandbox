@@ -35,6 +35,7 @@ const playAgain=()=>{
     flag=false;
     btn.remove()
     toGuess=genLetter()
+    p.innerText="?"
     logArr()
 }
 const checkWin = key => {
@@ -45,6 +46,7 @@ const checkWin = key => {
         console.dir(btn);
         btn.addEventListener("click",playAgain)
         document.body.appendChild(btn)
+        p.innerText=toGuess
         flag = "true"
     }
     else {
