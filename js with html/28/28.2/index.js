@@ -30,3 +30,18 @@ const printNameAfterSecond=()=>{
     })
 }
 printNameAfterSecond()
+//   let obj={
+//       name:"Rawi",
+//       async(cb){
+//           cb();
+//       },
+//       parse(){
+//         console.log(`${this.name} parse called`);
+//       },
+//       render(){
+//           this.async(function(){
+//               this.parse()
+//           }.bind(this))
+//       }
+//   }
+// obj.render()
