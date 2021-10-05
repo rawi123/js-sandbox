@@ -14,3 +14,5 @@ function printHeroes(heroes, printFunc) {
     })
 }
 printHeroes(superHeroes,printName)
+// const f=new Function('name=rawi',"console.log(name)");
+// f("rawi");
