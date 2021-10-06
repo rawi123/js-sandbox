@@ -77,4 +77,4 @@ async function checkAnswer(flag, element) {
         }, 1000);
     })
 }
-fetchQuestion()
+window.onload = function () {fetchQuestion()};

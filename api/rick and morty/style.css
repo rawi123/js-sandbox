@@ -78,10 +78,10 @@ html{
     flex-direction: column;
     justify-content:space-between;
     transition: all 1s;
-    animation:popup 1s ease-out forwards;
+    animation:popup .5s ease-out forwards;
 }
 .remove-hover{
-    animation:popdown 1s ease forwards;
+    animation:popdown .5s ease forwards;
 }
 @keyframes popup {
     0%{
