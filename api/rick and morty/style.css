@@ -63,9 +63,11 @@ html{
     align-items: center;
     background: white;
     width: 20vw;
+    overflow: hidden;
 }
 .on-hover{
     height: 100%;
+    overflow:hidden ;
     width: 100%;
     position: absolute;
     background: white;
@@ -75,7 +77,28 @@ html{
     display: flex;
     flex-direction: column;
     justify-content:space-between;
+    transition: all 1s;
+    animation:popup 1s ease-out forwards;
 }
+.remove-hover{
+    animation:popdown 1s ease forwards;
+}
+@keyframes popup {
+    0%{
+        transform:translateY(100%)
+    }
+    100%{
+        transform:translateY(0)
+    }
+} 
+@keyframes popdown {
+    0%{
+        transform:translateY(0)
+    }
+    100%{
+        transform:translateY(100%)
+    }
+} 
 @media (max-width:1400px) {
     .on-hover{
         font-size: 1.2rem;

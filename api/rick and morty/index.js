@@ -18,7 +18,7 @@ async function gen(firstTime = true) {
 
         if (!firstTime) {
             body.append(spinner)
-            spinnerQuote.scrollIntoView({ behavior: "smooth", block: "end"});
+            spinnerQuote.scrollIntoView({ behavior: "smooth", block: "end" });
             charList = await (await fetch(next)).json();
             await wait(2)
         }
@@ -42,9 +42,9 @@ async function gen(firstTime = true) {
 }
 
 const quoteGen = async () => {
-    let randomP = Math.floor(Math.random() * 1 + 1)
-    let randomQ = Math.floor(Math.random() * 1 + 1)
-    let quote = await (await fetch(`http://loremricksum.com/api/?paragraphs=${randomP}&quotes=${randomQ}`)).json()
+    let randomP = Math.floor(Math.random() * 1 + 1),
+        randomQ = Math.floor(Math.random() * 1 + 1),
+        quote = await (await fetch(`http://loremricksum.com/api/?paragraphs=${randomP}&quotes=${randomQ}`)).json()
     return quote;
 }
 
@@ -62,8 +62,8 @@ const createPost = async (char) => {
         h3 = document.createElement("h3"),
         learnMore = styleLearnMore("h3"),
         location = false;
-    
-    if (char.location.url.length > 0) { location = await (await fetch(`${char.location.url}`)).json() }
+
+    if (char.location.url.length > 0) { location = await (await fetch(`${char.location.url}`)).json()}
     let onHover = createHover(char, location);
 
     createImg(img, char.image)
@@ -74,7 +74,17 @@ const createPost = async (char) => {
     grid.append(div)
 
     learnMore.addEventListener("click", () => { div.append(onHover) })
-    onHover.children[1].addEventListener("click", () => { onHover.remove() })
+    onHover.children[1].addEventListener("click", () => {
+        new Promise((res,rej)=>{
+            onHover.classList.toggle("remove-hover")
+            setTimeout(() => {
+                res()
+            }, 1000);
+        }).then(e=>{
+            onHover.classList.toggle("remove-hover")
+            onHover.remove()
+        })
+    })
 }
 const createImg = (img, url) => {
     img.src = url
@@ -91,7 +101,6 @@ const createHover = (character, location) => {
     let onHover = document.createElement("div"),
         info = document.createElement("h4"),
         removeHover = styleLearnMore("h4");
-
     info.style.padding = ".5rem"
     onHover.classList.add("on-hover")
 
@@ -115,4 +124,4 @@ const genApi = async () => { await gen() }
 function checkBottom() { if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) { gen(false) } }
 
 
-genApi()
+window.onload = function () { genApi() };
