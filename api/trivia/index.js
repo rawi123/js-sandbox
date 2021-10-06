@@ -16,32 +16,34 @@ function playGame() {
         else { createQuestion(results[questionNumber], 2) }
     }
     else {
+        let btn = document.createElement("input")
         container.innerHTML = `<h1>THANK YOU FOR PLAYING! PLEASE COME AGAIN!<br>score:${score}</h1>`
-        container.classList.toggle("end-game")
-        let btn=document.createElement("input")
-        btn.type="submit"
+        btn.type = "submit"
+        btn.value = "play again"
+        btn.addEventListener("click", e => { location.reload() })
         container.append(btn)
-        btn.value="play again"
-        btn.addEventListener("click",e=>{location.reload()})
+        container.classList.toggle("end-game")
     }
-
-
 }
+
 async function createQuestion(question, arrlength) {
-    [...container.children].slice(1).map(e => { e.remove() })
+
     let arr = []
+    let rightQuestion = Math.floor(Math.random() * arrlength);
+    [...container.children].slice(1).map(e => { e.remove() })
+
     for (let i = 0; i < arrlength; i++)
         arr.push(document.createElement("h2"))
-    let rightQuestion = Math.floor(Math.random() * arrlength);
+
     h3.innerHTML = question.question
     shuffeledAnswer.length = 0
     for (let i = 0; i < arrlength - 1; i++) {
         arr[i].innerHTML = question.incorrect_answers[i]
         shuffeledAnswer.push(arr[i])
     }
+
     let rightAnswerSaved = arr[arrlength - 1]
     rightAnswerSaved.innerHTML = question.correct_answer
-
     shuffeledAnswer.splice(rightQuestion, 0, rightAnswerSaved)
 
     shuffeledAnswer.map(e => {
@@ -53,13 +55,10 @@ async function createQuestion(question, arrlength) {
         container.append(e)
     });
 }
-function win() {
-    checkAnswer(true, this)
-}
+function win() { checkAnswer(true, this) }
 
-function wrongAnswer() {
-    checkAnswer(false, this)
-}
+function wrongAnswer() { checkAnswer(false, this) }
+
 async function checkAnswer(flag, element) {
     shuffeledAnswer.map(e => {
         e.removeEventListener("click", wrongAnswer)
@@ -70,9 +69,7 @@ async function checkAnswer(flag, element) {
             element.style.background = "green"
             score += 10
         }
-        else {
-            element.style.background = "red"
-        }
+        else { element.style.background = "red" }
         questionNumber++;
         setTimeout(() => {
             res()
