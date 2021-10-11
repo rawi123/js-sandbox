@@ -1,0 +1,26 @@
+.container{
+    display: flex;
+    /* flex: ; */
+}
+.container>*{
+    margin: 1rem;
+ 
+}
+.pic{
+    background: wheat;
+    height: 40vh;
+    flex-grow: 1;
+}
+.btns{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width:15vw;
+}
+.btns>*{
+    cursor: pointer;
+}
+.con{
+    display: flex;
+    justify-content: space-around;
+}
